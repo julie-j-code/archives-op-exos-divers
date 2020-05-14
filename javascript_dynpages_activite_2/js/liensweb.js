@@ -73,13 +73,13 @@ var messageAjout = document.getElementById("messageAjout");
 var messageTitre = document.getElementById("titre");
 
 
-    //Affichage du formulaire d'ajout à la place du bouton
-    formBt.addEventListener('click', function(){
-       formBt.style.display = "none";
-       formElt = createForm();
-       document.body.insertBefore(formElt, contenu);
+//Affichage du formulaire d'ajout à la place du bouton
+formBt.addEventListener('click', function () {
+    formBt.style.display = "none";
+    formElt = createForm();
+    document.body.insertBefore(formElt, contenu);
     //Masque le forumulaire lors de la validation pour afficher le bouton  à  la place
-    formElt.addEventListener('submit', function(event){
+    formElt.addEventListener('submit', function (event) {
         formElt.style.display = "none";
         formBt.style.display = "inline-block";
         addNewLink();
@@ -89,40 +89,40 @@ var messageTitre = document.getElementById("titre");
 
 });
 
-function createForm(){
+function createForm() {
     formElt = document.createElement("form");
     formElt.id = "ajoutLien";
-    formElt.appendChild(inputSetter({"type":"text","name":"auteur","placeholder": "Votre Nom","required":"required"}));
-    formElt.appendChild(inputSetter({"type":"text","name":"titre","placeholder": "Titre du lien","size": "30","required":"required"}));
-    formElt.appendChild(inputSetter({"type":"text","name":"url","placeholder": "URL du lien","size" : "30","required":"required"}));
-    formElt.appendChild(inputSetter({"type":"submit","name":"bouton","value": "Ajouter"}));
+    formElt.appendChild(inputSetter({ "type": "text", "name": "auteur", "placeholder": "Votre Nom", "required": "required" }));
+    formElt.appendChild(inputSetter({ "type": "text", "name": "titre", "placeholder": "Titre du lien", "size": "30", "required": "required" }));
+    formElt.appendChild(inputSetter({ "type": "text", "name": "url", "placeholder": "URL du lien", "size": "30", "required": "required" }));
+    formElt.appendChild(inputSetter({ "type": "submit", "name": "bouton", "value": "Ajouter" }));
     return formElt;
 }
 
-function inputSetter(attributes){
+function inputSetter(attributes) {
     var element = document.createElement("input");
-    for (var key in attributes){
+    for (var key in attributes) {
         element.setAttribute(key, attributes[key])
     }
     return element;
 }
 
-function addNewLink(){
+function addNewLink() {
     var url = formElt.elements.url.value;
     var regex = /^https?:\/\/.+/i;
-    if (!regex.test(url)){
+    if (!regex.test(url)) {
         url = "http://" + url;
     }
-    var lien ={
-        auteur : formElt.elements.auteur.value,
-        titre : formElt.elements.titre.value,
-        url : url,
+    var lien = {
+        auteur: formElt.elements.auteur.value,
+        titre: formElt.elements.titre.value,
+        url: url,
     }
-    contenu.insertBefore(createLinkElement(lien),contenu.childNodes[1]);
+    contenu.insertBefore(createLinkElement(lien), contenu.childNodes[1]);
     //temps affichage messages de confirmation
     messageTitre.textContent = lien.titre;
     messageAjout.style.display = "block";
-    setTimeout(function(){messageAjout.style.display = "none";}, 2000);
+    setTimeout(function () { messageAjout.style.display = "none"; }, 2000);
 }
 
 
