@@ -1,0 +1,137 @@
+body {
+    background: url("../img/278.jpg") no-repeat fixed center;
+}
+
+#container {
+    display: flex;
+    align-items: flex-start;
+    font-size: medium;
+}
+
+@font-face {
+    font-family: 'aaarghnormal';
+    src: url('Aaargh-webfont.eot');
+    src: url('Aaargh-webfont.eot?#iefix') format('embedded-opentype'), url('Aaargh-webfont.woff2') format('woff2'), url('Aaargh-webfont.woff') format('woff'), url('Aaargh-webfont.ttf') format('truetype'), url('Aaargh-webfont.svg#aaarghnormal') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+section {
+    display: flex;
+    justify-content: space-around;
+    clear: right;
+}
+
+nav {
+    border-radius: 5px 5px 5px 5px;
+    width: 8%;
+    height: 750px;
+    padding-left: 4px;
+    background: RGB(128, 128, 128, 0.9);
+}
+
+
+/*pas besoin de forcer les % des 3 blocs qui suivent. Ils s'adaptent automatiquement en fonction de leur contenu*/
+
+#experience,
+p {
+    margin-left: 40px;
+}
+
+#formations {
+    margin-left: 40px;
+}
+
+#competences {
+    margin-left: 40px;
+}
+
+#competences ul {
+    background: RGB(128, 128, 128, 0.9);
+    color: white;
+    margin: 50px 30px;
+    padding: 50px;
+    border-radius: 5px;
+}
+
+p {
+    text-align: justify;
+    line-height: 2em;
+    border-left: 2px solid #ff80c0;
+    padding: 10px 30px;
+    width: 70%;
+}
+
+em {
+    text-decoration: underline;
+    text-decoration-color: #ff80c0;
+    color: grey;
+    font-style: normal;
+}
+
+figure {
+    float: right;
+}
+
+img {
+    border: 2px solid white;
+    border-radius: 5px;
+    box-shadow: 5px 5px grey;
+}
+
+figcaption {
+    font-style: italic;
+    text-align: right;
+    color: 5px 5px grey;
+    font-size: 0.8em;
+    margin-top: 20px;
+    padding: 5px;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 5px;
+}
+
+h1,
+h2,
+h3 {
+    font-family: 'aaarghnormal', Arial, serif;
+}
+
+h3,
+h4,
+ul {
+    margin-left: 30px;
+}
+
+h1 {
+    text-align: center;
+    font-size: 1.6em;
+    margin: 20px auto;
+}
+
+h2 {
+    font-size: 1.4em;
+    color: #ff80c0;
+}
+
+h3 {
+    font-size: 1.2em;
+}
+
+h3 {
+    font-size: 1em;
+}
+
+h4 {
+    background: RGB(128, 128, 128, 0.9);
+    color: white;
+    border-radius: 5px;
+    max-width: 550px;
+    margin-top: 0;
+    padding: 5px;
+    font-weight: normal;
+}
+
+#main {
+    width: 85%;
+    margin: auto;
+}
